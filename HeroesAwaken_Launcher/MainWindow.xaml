@@ -1,0 +1,59 @@
+﻿<Window x:Name="Launcher_Window" x:Class="OSH_Launcher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="OSH_Launcher" Height="657.929" Width="858.651" WindowStartupLocation="CenterScreen" Visibility="Visible" BorderThickness="0,0,1,0" ResizeMode="CanMinimize" Background="#FF3E3838" Icon="resources/icons/BFHeroes32x32.ico">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid HorizontalAlignment="Left" Width="855" Height="628" VerticalAlignment="Bottom" Margin="0,0,0,1" Loaded="Grid_Loaded">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="450*"/>
+            <ColumnDefinition Width="219*"/>
+            <ColumnDefinition Width="220*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="257*"/>
+            <RowDefinition Height="56*"/>
+            <RowDefinition Height="88*"/>
+            <RowDefinition Height="169*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="resources/client_pics/border.png"/>
+        </Grid.Background>
+        <WebBrowser x:Name="website_browser" HorizontalAlignment="Left" Height="414" Margin="8,32,0,0" VerticalAlignment="Top" Width="837" OpacityMask="White" Grid.ColumnSpan="3" Grid.Row="4" Grid.RowSpan="4"/>
+        <Button Style="{StaticResource MyButtonStyle}"  x:Name="button_logout" HorizontalAlignment="Left" Margin="121,8,0,0" VerticalAlignment="Top" Width="81" Height="29" Click="button_logout_click" BorderThickness="0" Background="White" Content="Logout" FontSize="20" FontWeight="Bold" Foreground="Black" Grid.RowSpan="3" Grid.Column="2">
+            <Button.BorderBrush>
+                <ImageBrush/>
+            </Button.BorderBrush>
+        </Button>
+        <Button Style="{StaticResource MyButtonStyle}"  x:Name="button_play" Content="" Margin="174,46,4,0" Click="button_play_click" Height="122" VerticalAlignment="Top" Grid.Row="7" Grid.ColumnSpan="2" Grid.Column="1">
+            <Button.BorderBrush>
+                <ImageBrush/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <ImageBrush ImageSource="resources/button/planow_unpressed.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Grid x:Name="grid_logo" HorizontalAlignment="Right" Height="77" Margin="0,10,105,0" VerticalAlignment="Top" Width="320" MouseLeftButtonDown="grid_logo_MouseLeftButtonDown" Cursor="Hand" Grid.RowSpan="5">
+            <Grid.Background>
+                <ImageBrush ImageSource="resources/client_pics/ha_logo_small.png" Stretch="Uniform"/>
+            </Grid.Background>
+        </Grid>
+        <Label x:Name="label_welcome" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="369,0,0,0" FontSize="18" FontWeight="Bold" FontFamily="Segoe UI Black" Foreground="#FFB2AFAF" Height="32" Width="378" Grid.Row="4" Grid.ColumnSpan="3"/>
+        <ProgressBar x:Name="progressbar" HorizontalAlignment="Left" Height="38" Margin="67,81,0,0" VerticalAlignment="Top" Width="539" Grid.Row="7" ValueChanged="progressbar_ValueChanged" Grid.ColumnSpan="2"/>
+        <Label x:Name="label_progresbar" Content="Label" HorizontalAlignment="Left" Margin="67,81,0,0" VerticalAlignment="Top" Width="539" Grid.Row="7" Height="38" FontSize="18" Grid.ColumnSpan="2" FontFamily="Trebuchet MS" FontWeight="Bold"/>
+    </Grid>
+</Window>
